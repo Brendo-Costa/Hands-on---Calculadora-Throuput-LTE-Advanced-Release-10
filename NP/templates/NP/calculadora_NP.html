@@ -1,0 +1,88 @@
+{% extends 'base.html'%}
+
+{% block conteudo %}
+
+    <h1  class="mt-5"> Calculadora Downlink Throughput - NP </h1>
+
+    <form method="post" action="{%url 'np'%}">
+        {%csrf_token%}
+        <div class="form-group"> 
+            <h4>Component Carries (n°)</h4>
+            <select name='CA'>
+                <option value=1 > 1 </option>
+                <option value=2 > 2 </option>
+                <option value=3 > 3 </option>
+                <option value=4 > 4 </option>
+                <option value=5 > 5 </option>
+                <option value=6 > 6 </option>
+                <option value=7 > 7 </option>
+                <option value=8 > 8 </option>
+                <option value=9 > 9 </option>
+                <option value=10 > 10 </option>
+                <option value=11 > 11 </option>
+                <option value=12 > 12 </option>
+                <option value=13 > 13 </option>
+                <option value=14 > 14 </option>
+                <option value=15 > 15 </option>
+                <option value=16 > 16 </option>
+            </select>
+        </div><br>
+
+        <div class="form-group">
+            <h4>MIMO</h4> 
+            <select name="MIMO" id="">
+                <option value=1>1x1</option>
+                <option value=4>4x4</option>
+                <option value=8>8x8</option>
+            </select>
+        </div><br>
+        
+        <div class="form-group">
+            <h4>Esquema de Modulação</h4> 
+            <select name="MOD" id="">
+                <option value=2>QPSK</option>
+                <option value=4>16-QAM</option>
+                <option value=6>64-QAM</option>
+                <option value=8>256-QAM</option>
+            </select>
+        </div><br>
+
+        <div class="form-group">
+            <h4>Número de RB's (0-275)</h4> 
+            <input type="number" name="RB">
+
+        </div><br>
+
+        <div class="form-group">
+            <h4>Numerologia SCS</h4>
+            <select name="NUM" id="">
+
+                <option value=0>15 KHz</option>
+                <option value=1>30 Khz</option>
+                <option value=2>60 Khz</option>
+                
+            </select>
+        </div> <br>
+
+        <div class="form-group">
+            <h4>Espaçamento de Frequência</h4>
+            <select name="FR" id="">
+                <option value=0.14>FR1</option>
+                <option value=0.18>FR2</option>
+            </select>
+
+        </div><br>
+
+        <button type="submit" href= "{% url 'np' %}" class="btn btn-success">
+            Calcular
+        </button>
+
+    </form>
+
+{% endblock %}
+Número de Component Carriers x
+Frequency Range 
+MIMO (layers) x
+Esquema de Modulação x
+Numerologia (espaçamento entre subportadora) x
+Number of RBs (0 to 275)

@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block conteudo %}
+
+    <h1  class="mt-5"> Calculadora Downlink Throughput - NP </h1>
+    <br>
+
+    <H4>Resultado: {{TAXA}} Mbps</H4>
+    <br>
+
+    <button class="btn btn-success">
+        <a href="{% url 'np' %}" style="color: black">
+            Calcular Novamente
+        </a>
+    </button>
+
+
+    
+
+{% endblock %}
+Número de Component Carriers x
+Frequency Range 
+MIMO (layers) x
+Esquema de Modulação x
+Numerologia (espaçamento entre subportadora) x
+Number of RBs (0 to 275)

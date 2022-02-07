@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+    <br>
+    <h4>Calculadora LTE - Resultado</h4> <br> 
+    <h4>PRB's:  {{RB}}  </h4> <br>
+    <h4>TBS Index: {{TBS}}  </h4> <br>
+    <h4>Valor TBS (bps):  {{TX}}  </h4><br>
+    <h4>QTD Simbolos:  {{MO}} </h4><br>
+
+    <h4>Taxa de DownLink:  {{THROUP}} bps  </h4> <br>
+    <br>
+    <button class="btn btn-success">
+        <a href="{% url 'index' %}" style="color: white;">
+            Calcular Novamente
+        </a>
+
+    </button>
+
+{% endblock %}
